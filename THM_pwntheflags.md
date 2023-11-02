@@ -4,7 +4,7 @@
 
 ## Try Hack Me - Pwn The Flags
 
-##### URL: tryhackme.com/jr/pwntheflags
+##### URL: https://tryhackme.com/room/pwntheflags
 
 ##### Created by AVS0X.
 
@@ -39,5 +39,57 @@ Task 3)  Find the 🚩
 Now We'll login into ftp server, As nmap scan reviled that Anonymous login allowed.
 
 ```ftp <target IP>```
-Name as anonymous and hit enter.
+
+Specify Name as anonymous and for password just hit enter.
+
+
+![asa3w](https://github.com/AVs0x/CTF-Write-up/assets/111527380/0dffdf09-253c-4f2f-bdd0-f69110b44d5b)
+
+use get command to download the files.  ```get filename```
+
+To crack the hashes you can use John the Ripper tool or crackstation.net
+
+![asdas3](https://github.com/AVs0x/CTF-Write-up/assets/111527380/31255eeb-e001-409f-b2b9-91f4c3c04131)
+
+Now unzip the zip file using  ```unzip filename``` and provide the password retrieved from the hash.
+
+Voila!! Now We have successfully found Flag1.txt
+ ```cat Flag1.txt```
+ 
+For Flag2 we need to use SSH Brute Forcing technique. We'll be using hydra tool.
+
+```hydra -l <username> -P <wordlist location> <target IP> ssh```
+
+![as2as7](https://github.com/AVs0x/CTF-Write-up/assets/111527380/d766238b-28ba-4e6c-98bf-dac427887d44)
+
+Now login to ssh using ```ssh <username>@<target IP>```
+
+Let's list the file and directories using ```ls``` 
+
+Voila!! We found Flag2.txt
+```cat Flag2.txt```
+
+let's try to use sudo for root access. 
+```sudo su```
+Now locate to /root directory.
+```cd /root```
+
+Here we have Leo's secret file.
+
+![aseed3](https://github.com/AVs0x/CTF-Write-up/assets/111527380/96bd5dfa-a6cd-4ea7-9746-9a6a7e4b9328)
+
+Now we'll crack the given hash using John the Ripper tool or crackstation.net
+![asads3](https://github.com/AVs0x/CTF-Write-up/assets/111527380/231f17ed-a105-4cda-a80e-a967169317fb)
+
+Now We'll login as leo by ```su leo``` and locate to ```cd /home/leo```.
+
+To Decrypt the file we'll be using ```ccdecrypt Flag3.txt.cpt``` followed by the password retrieved from Leo's secret file.
+
+Finally!! We found Flag3.txt
+```cat Flag3.txt```
+
+And now we have all the flags.
+
+CONGRATULATIONS!!! YOU HAVE COMPLETED THE ROOM!!!
+
 
