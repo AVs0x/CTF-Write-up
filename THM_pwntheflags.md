@@ -88,6 +88,10 @@ To Decrypt the file we'll be using ```ccdecrypt Flag3.txt.cpt``` followed by the
 Finally!! We found Flag3.txt
 ```cat Flag3.txt```
 
+
+
+![sadw](https://github.com/AVs0x/CTF-Write-up/assets/111527380/17dce597-0995-4880-aa59-68c0018b91be)
+
 And now we have all the flags.
 
 CONGRATULATIONS!!! YOU HAVE COMPLETED THE ROOM!!!
